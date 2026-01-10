@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Biomimicry & Technology Design System - All colors in HSL */
+
+@layer base {
+  :root {
+    /* Deep forest green palette */
+    --background: 120 25% 8%;
+    --foreground: 60 20% 90%;
+
+    --card: 120 20% 12%;
+    --card-foreground: 60 20% 90%;
+
+    --popover: 120 20% 10%;
+    --popover-foreground: 60 20% 90%;
+
+    /* Gold/Brass accent */
+    --primary: 45 70% 47%;
+    --primary-foreground: 120 25% 8%;
+
+    /* Darker forest tones */
+    --secondary: 120 20% 15%;
+    --secondary-foreground: 60 20% 90%;
+
+    --muted: 120 15% 18%;
+    --muted-foreground: 120 10% 55%;
+
+    /* Neon green accent */
+    --accent: 120 60% 45%;
+    --accent-foreground: 120 25% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 60 20% 90%;
+
+    --border: 120 15% 20%;
+    --input: 120 15% 18%;
+    --ring: 45 70% 47%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens for this theme */
+    --gold: 45 70% 47%;
+    --gold-light: 45 80% 60%;
+    --gold-glow: 45 100% 50%;
+    --forest-deep: 120 30% 6%;
+    --forest-dark: 120 25% 10%;
+    --forest-mid: 120 20% 18%;
+    --neon-green: 120 80% 50%;
+    --neon-green-dim: 120 60% 35%;
+
+    --sidebar-background: 120 25% 8%;
+    --sidebar-foreground: 60 20% 90%;
+    --sidebar-primary: 45 70% 47%;
+    --sidebar-primary-foreground: 120 25% 8%;
+    --sidebar-accent: 120 20% 15%;
+    --sidebar-accent-foreground: 60 20% 90%;
+    --sidebar-border: 120 15% 20%;
+    --sidebar-ring: 45 70% 47%;
+  }
+
+  .dark {
+    --background: 120 25% 8%;
+    --foreground: 60 20% 90%;
+    --card: 120 20% 12%;
+    --card-foreground: 60 20% 90%;
+    --popover: 120 20% 10%;
+    --popover-foreground: 60 20% 90%;
+    --primary: 45 70% 47%;
+    --primary-foreground: 120 25% 8%;
+    --secondary: 120 20% 15%;
+    --secondary-foreground: 60 20% 90%;
+    --muted: 120 15% 18%;
+    --muted-foreground: 120 10% 55%;
+    --accent: 120 60% 45%;
+    --accent-foreground: 120 25% 8%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 60 20% 90%;
+    --border: 120 15% 20%;
+    --input: 120 15% 18%;
+    --ring: 45 70% 47%;
+    --sidebar-background: 120 25% 8%;
+    --sidebar-foreground: 60 20% 90%;
+    --sidebar-primary: 45 70% 47%;
+    --sidebar-primary-foreground: 120 25% 8%;
+    --sidebar-accent: 120 20% 15%;
+    --sidebar-accent-foreground: 60 20% 90%;
+    --sidebar-border: 120 15% 20%;
+    --sidebar-ring: 45 70% 47%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .font-serif-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .gold-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--gold)) 0%,
+      hsl(var(--gold-light)) 50%,
+      hsl(var(--gold)) 100%
+    );
+  }
+
+  .gold-text {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--gold)) 0%,
+      hsl(var(--gold-light)) 50%,
+      hsl(var(--gold)) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-gold {
+    box-shadow: 
+      0 0 20px hsl(var(--gold) / 0.3),
+      0 0 40px hsl(var(--gold) / 0.2),
+      0 0 60px hsl(var(--gold) / 0.1);
+  }
+
+  .glow-green {
+    box-shadow: 
+      0 0 20px hsl(var(--neon-green) / 0.3),
+      0 0 40px hsl(var(--neon-green) / 0.2);
+  }
+
+  .circuit-line {
+    background: linear-gradient(
+      to top,
+      hsl(var(--neon-green-dim)) 0%,
+      hsl(var(--neon-green)) 50%,
+      transparent 100%
+    );
+  }
+}
