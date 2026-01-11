@@ -1,0 +1,21 @@
+name: Release Origin Check
+
+on:
+  create:
+    branches:
+      - 'release/*'
+
+jobs:
+  validate-release-origin:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check release branch origin
+        run: |
+          echo "Validating release branch origin"
+          BASE_REF=$(git show-ref --heads develop | awk '{print $1}')
+          NEW_REF=${{ github.sha }}
+
+          if [[ "$NEW_REF" != "$BASE_REF" ]]; then
+            echo "❌ release/* must be created from develop"
+            exit 1
+          fi
