@@ -1,3 +1,3 @@
 # Code Nature Studio
 
-The web site
+Code Nature Studio web site
