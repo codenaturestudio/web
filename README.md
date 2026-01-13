@@ -1,3 +1,3 @@
 # Code Nature Studio
 
-Buildig..
+Buildig...
